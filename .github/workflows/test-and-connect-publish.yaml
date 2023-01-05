@@ -37,6 +37,8 @@ jobs:
           
       - name: Publish Connect content
         uses: rstudio/actions/connect-publish@main
+        env:
+          CONNECT_ENV_SET_TESTVAR: ${{ secrets.TESTVAR }}
         with:
           url: ${{ secrets.CONNECT_SERVER }}
           api-key: ${{ secrets.CONNECT_API_KEY }}
